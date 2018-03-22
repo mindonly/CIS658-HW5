@@ -1,35 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @bug.user.try(:lname) ? @bug.user.try(:fname) + " " + @bug.user.try(:lname) : "NA" %>
-</p>
+<h1>Bug Detail</h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @bug.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @bug.description %>
-</p>
-
-<p>
-  <strong>Issue type:</strong>
-  <%= @bug.issue_type %>
-</p>
-
-<p>
-  <strong>Priority:</strong>
-  <%= @bug.priority %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @bug.status %>
-</p>
-
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th class="col-md-3">User</th>
+            <th class="col-md-3">Title</th>
+            <th class="col-md-3">Description</th>
+            <th class="col-md-3">Issue Type</th>
+            <th class="col-md-3">Priority</th>
+            <th class="col-md-3">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="col-md-3">
+                <%= @bug.user.try(:lname) ? @bug.user.try(:fname) + " " + @bug.user.try(:lname) : "NA" %>
+            </td>
+            <td class="col-md-3">
+                <%= @bug.title %>
+            </td>
+            <td class="col-md-3">
+                <%= @bug.description %>
+            </td>
+            <td class="col-md-3">
+                <%= @bug.issue_type %>
+            </td>
+            <td class="col-md-3">
+                <%= @bug.priority %>
+            </td>
+            <td class="col-md-3">
+                <%= @bug.status %>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 <%= link_to 'Edit', edit_bug_path(@bug) %> |
 <%= link_to 'Back', bugs_path %>
