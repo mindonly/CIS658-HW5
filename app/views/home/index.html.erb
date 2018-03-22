@@ -1,0 +1,28 @@
+<div class="jumbotron">
+    <div class="container">
+    <h1>Blockhead Bugs</h1>
+        <p>The Music Scene is where you'll find it.</p>
+        <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <% @bugs.each do |bug| %>
+            <div class="col-md-4">
+                <h2><%= bug.title%></h2>
+                <p><%=bug.description.truncate_words(30)%></p>
+                <p>
+                    <%= link_to 'Read more >', bug, class: "btn btn-info"%>
+                </p>
+            </div>
+        <% end %>
+    </div>
+    
+    <hr>
+    
+    <footer>
+        <p>&copy; 2018 Company, Inc.</p>
+    </footer>
+</div>
